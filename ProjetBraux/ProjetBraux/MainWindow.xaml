@@ -1,0 +1,87 @@
+﻿<Window x:Class="ProjetBraux.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetBraux"
+        mc:Ignorable="d"
+        Title="VolMaintenance" Height="582.353" Width="1035.714">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="920">
+            <TabItem Header="Vol">
+                <Grid>
+                    <DataGrid x:Name="dataGridVol" HorizontalAlignment="Left" Height="403" VerticalAlignment="Top" Width="882" Margin="15,102,0,0" AutoGenerateColumns="False" CanUserReorderColumns="False" MinColumnWidth="56" >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="Choix">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <RadioButton GroupName="Choix" IsChecked="{Binding Choix}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding Avion}" ClipboardContentBinding="{x:Null}" Header="Avion"/>
+                            <DataGridTextColumn Binding="{Binding Capacite}" ClipboardContentBinding="{x:Null}" Header="Capacité Max"/>
+                            <DataGridTextColumn Binding="{Binding Type}" ClipboardContentBinding="{x:Null}" Header="Type"/>
+                            <DataGridTemplateColumn Header="Enregistrer">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="Enregistrer">Enregistrer</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Valider" HorizontalAlignment="Left" Height="45" Margin="872,40,0,0" VerticalAlignment="Top" Width="20"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="17,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="657,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="442,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="230,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" Margin="19,10,0,0" TextWrapping="Wrap" Text="Date Départ" VerticalAlignment="Top" Width="175"  BorderThickness="0" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" Margin="658,10,0,0" TextWrapping="Wrap" Text="Ville Arrivé" VerticalAlignment="Top" Width="175"  BorderThickness="0" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" Margin="443,10,0,0" TextWrapping="Wrap" Text="Ville Départ" VerticalAlignment="Top" Width="175"  BorderThickness="0" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" Margin="232,10,0,0" TextWrapping="Wrap" Text="Date Arrivé" VerticalAlignment="Top" Width="175"  BorderThickness="0" IsEnabled="False"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Maintenance">
+                <Grid>
+                    <DataGrid x:Name="dataGridMaintenance" HorizontalAlignment="Left" Height="485" VerticalAlignment="Top" Width="887" Margin="15,20,0,0" AutoGenerateColumns="False" CanUserReorderColumns="False" MinColumnWidth="56" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Avion}" ClipboardContentBinding="{x:Null}" Header="Avion"/>
+                            <DataGridTextColumn Binding="{Binding Capacite}" ClipboardContentBinding="{x:Null}" Header="Etat"/>
+                            <DataGridTextColumn Binding="{Binding Type}" ClipboardContentBinding="{x:Null}" Header="Reparation"/>
+                            <DataGridComboBoxColumn ClipboardContentBinding="{x:Null}" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}" Header="Equipe Reparation"/>
+                            <DataGridTemplateColumn Header="Enregistrer">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="Enregistrer">Enregistrer</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="emploi" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="585" Margin="192,45,0,0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="id"/>
+                            <DataGridTextColumn Binding="{Binding Nom}" ClipboardContentBinding="{x:Null}" Header="nom"/>
+                            <DataGridTextColumn Binding="{Binding Mdp}" ClipboardContentBinding="{x:Null}" Header="mdp"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid HorizontalAlignment="Left" Height="545" Margin="920,0,-2,0" VerticalAlignment="Top" Width="110">
+            <Grid HorizontalAlignment="Left" Height="410" Margin="0,140,0,-5" VerticalAlignment="Top" Width="110" Background="#FFDEC13F"/>
+            <Grid HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="110" Background="#FF19A0A6">
+                <Button HorizontalAlignment="Left" Margin="15,35,0,0" VerticalAlignment="Top" Width="75" Height="70" Click="Button_Click">
+                    <Image Source="axelent.jpg"/>
+                </Button>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
+
